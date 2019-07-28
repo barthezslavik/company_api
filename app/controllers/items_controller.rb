@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def dashboard
-    @items = Item.all
+    @items = Item.root
   end
 
   # GET /items
@@ -73,6 +73,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :data)
+      params.require(:item).permit(:name, :data, :parent_id)
     end
 end

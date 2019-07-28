@@ -21,6 +21,11 @@
     <%= form.text_area :data %>
   </div>
 
+  <div class="field">
+    <%= form.label :parent_id %>
+    <%= form.collection_select :parent_id, Item.all, :id, :name %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
